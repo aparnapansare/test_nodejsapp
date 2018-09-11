@@ -1,0 +1,22 @@
+{
+  "name": "basicroutes",
+  "version": "1.0.0",
+  "description": "basic routing example",
+  "main": "myfirst.js",
+  "scripts": {
+    "start": "nodemon myfirst.js"
+  },
+  "author": "Aparna",
+  "dependencies": {
+    "express": "^4.16.2",
+    "html": "^1.0.0",
+    "mysql": "^2.15.0",
+    "node-datetime": "^2.0.6",
+    "pug": "^2.0.3",
+    "request": "^2.87.0"
+  },
+  "devDependencies": {
+    "body-parser": "^1.8.4",
+    "nodemon": "^1.14.11"
+  }
+}
