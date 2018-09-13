@@ -13,19 +13,3 @@ http.createServer(function (req, res) {
     return res.end();
 }).listen(8080); 
 
-var mysql = require('mysql');
-
-var con1 = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "root",
-  database: "ayp_portfolio"
-});
-
-con1.connect(function(err) {
-  if (err) throw err;
-  con1.query("SELECT * FROM transaction", function (err, result, fields) {
-    if (err) throw err;
-    console.log(result);
-  });
-});
