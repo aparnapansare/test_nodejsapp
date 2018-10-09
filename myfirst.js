@@ -40,7 +40,7 @@ app.get('/getList', function(req, res) {
         //sql=sql & "'" & request.querystring("q") & "'"
 
         console.log("insite getList");
-                con.query('SELECT distinct(sharename) FROM transaction order by sharename', function(err, rows, fields) {
+                con.query('SELECT distinct(sharename) FROM mytransaction order by sharename', function(err, rows, fields) {
                 if (err) {
                         res.status(500).json({"status_code": 500,"status_message": "internal server error"});
                 } else {
@@ -107,7 +107,7 @@ app.post("/portfolioform",function(req,res){
   else 
         stockname =  req.body.stockname;
 
-  var sqlquery = "insert into  transaction ( accid , sharename , shareqty , trxnname , price,trxndate,currentprice,markdeleted ) values ("+ req.body.user + ",'" + stockname+"',"+qty+",'"+req.body.trxn+"',"+req.body.price+", '"+dt + "', "+req.body.currentprice+",0)";
+  var sqlquery = "insert into  mytransaction ( accid , sharename , shareqty , trxnname , price,trxndate,currentprice,markdeleted ) values ("+ req.body.user + ",'" + stockname+"',"+qty+",'"+req.body.trxn+"',"+req.body.price+", '"+dt + "', "+req.body.currentprice+",0)";
   console.log(sqlquery);
 
   con.query(sqlquery,  function (err2, result) {
